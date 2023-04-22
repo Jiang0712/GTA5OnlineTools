@@ -150,10 +150,7 @@ public class Overlay : IDisposable
             int m_max_peds = Memory.Read<int>(m_ped_interface + 0x108);
             int m_cur_peds = Memory.Read<int>(m_ped_interface + 0x110);
 
-            gfx.DrawText(_fonts["Microsoft YaHei"], 12, _brushes["blue"], 10, _window.Height / 3 + 30,
-                $"GTA5线上小助手\n\nX: {myPosV3.X:0.0000}\nY: {myPosV3.Y:0.0000}\nZ: {myPosV3.Z:0.0000}\n\n" +
-                $"玩家数量: {playerCount}\nPed数量: {m_cur_peds}");
-
+          
             long pAimingPedPTR = Memory.Read<long>(Pointers.AimingPedPTR);
             bool isAimPed = Memory.Read<long>(pAimingPedPTR + 0x280) > 0;
 
